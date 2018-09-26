@@ -5,14 +5,14 @@ import { CoursesService } from './courses.service';
     selector:'courses', 
     template:`
     <h2>{{getTitle()}}</h2>
-    <ul>
-        <li *ngFor="let course of courses">{{course}}</li>
-    </ul>
+    <span style="display:block" *ngFor="let course of courses"><input type="checkbox"/> {{course}}</span>
+    <button class="btn btn-primary" [class.active] = "isActive">Enroll</button>
     `
 })
 export class CoursesComponent{
     title="list of courses";
     courses;
+    isActive = true;
     constructor(service:CoursesService){
         this.courses = service.getCources()
     }
