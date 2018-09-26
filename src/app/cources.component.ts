@@ -6,7 +6,7 @@ import { CoursesService } from './courses.service';
     template:`
     <h2>{{getTitle()}}</h2>
     <span style="display:block" *ngFor="let course of courses"><input type="checkbox"/> {{course}}</span>
-    <button class="btn btn-primary" [class.active] = "isActive">Enroll</button>
+    <button class="btn btn-primary" [class.active] = "isActive" (click) = "enrollToCourse($event)">Enroll</button>
     `
 })
 export class CoursesComponent{
@@ -18,5 +18,8 @@ export class CoursesComponent{
     }
     getTitle(){
         return this.title
+    }
+    enrollToCourse($event){
+        console.log('Enrolled to the Courses successfully ',$event);
     }
 }
