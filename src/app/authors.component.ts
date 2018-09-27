@@ -5,7 +5,7 @@ import { AuthorsService } from './authors.service';
     selector:'authours', 
     template:`
     <h2>{{getTitle()}}</h2>
-    
+    <span>Filter: </span><input type="text" (keyup.enter)="onKeyUp()" />
     <span *ngFor="let author of authors" style="display:block"><input type="checkbox"/> {{author}}</span>
     
     <table>
@@ -27,5 +27,8 @@ export class AuthorsComponent{
     }
     getTitle(){
         return this.title
+    }
+    onKeyUp(){
+        alert("Enter was pressed")
     }
 }
