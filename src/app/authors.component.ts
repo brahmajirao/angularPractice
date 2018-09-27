@@ -5,7 +5,7 @@ import { AuthorsService } from './authors.service';
     selector:'authours', 
     template:`
     <h2>{{getTitle()}}</h2>
-    <span>Filter: </span><input type="text" #searchValue (keyup.enter)="onKeyUp(searchValue.value)" />
+    <span>Filter: </span><input [(ngModel)]="searchStr" (keyup.enter)="onKeyUp()" />
     <span *ngFor="let author of authors" style="display:block"><input type="checkbox"/> {{author}}</span>
     
     <table>
@@ -22,13 +22,14 @@ export class AuthorsComponent{
     authors;
     colSpan = 2;
     isActive = false;
+    searchStr = "All Authors"
     constructor(service:AuthorsService){
         this.authors = service.getAuthors()
     }
     getTitle(){
         return this.title
     }
-    onKeyUp(searchStr){
-        alert(searchStr)
+    onKeyUp(){
+        alert(this.searchStr)
     }
 }
