@@ -1,13 +1,9 @@
 import {Component} from '@angular/core'
-import { CoursesService } from './courses.service';
+import { CoursesService } from '../courses.service';
 
 @Component({ 
     selector:'courses', 
-    template:`
-    <h2>{{getTitle()}}</h2>
-    <span style="display:block" *ngFor="let course of courses"><input type="checkbox"/> {{course}}</span>
-    <button class="btn btn-primary" [class.active] = "isActive" (click) = "enrollToCourse($event)">Enroll</button>
-    `
+    templateUrl: './courses.component.html'
 })
 export class CoursesComponent{
     title="list of courses";
