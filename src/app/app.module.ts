@@ -6,15 +6,17 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/cources.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
-import { AuthorsComponent } from './authors.component';
+import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
     CoursesComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

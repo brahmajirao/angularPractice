@@ -1,0 +1,17 @@
+<h2>{{getTitle()}}</h2>
+    <span>Filter: </span><input [(ngModel)]="searchStr" (keyup.enter)="onKeyUp()" />
+    <br/>
+    <div *ngFor="let author of authors" style="display:block">
+        <input type="checkbox"/> {{author.name}}
+        <span style="display: block;padding-left: 30px">Number of courses: {{author.numberofcourses}}</span>
+        <span style="display:block; padding-left: 30px">{{author.about | summary}}</span>
+        <hr>
+    </div>
+    
+    <table>
+        <tr>
+            <td [attr.colspan] = "colSpan">
+                <button [style.backgroundColor] = "isActive? 'blue': 'white' ">Follow</button>
+            </td>
+        </tr>
+    </table>
