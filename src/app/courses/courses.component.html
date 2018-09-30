@@ -1,7 +1,7 @@
 <h2>{{getTitle()}}</h2>
     <div style="display:block" *ngFor="let course of courses">
         <input type="checkbox"/> {{course.title | uppercase }} 
-        <app-favorite [isFavorite] = "course.isFavorite" (change)="onFavoriteChanged()"></app-favorite>
+        <app-favorite [isFavorite] = "course.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite>
         <span style="display:block; padding-left:30px">Rating: {{course.rating | number:'1.1-1'}}</span>
         <span style="display:block; padding-left:30px">Students: {{course.students | number}}</span>
         <span style="display:block; padding-left:30px">Price: {{course.price | currency:'EUR':true:'3.2-2' }}</span>

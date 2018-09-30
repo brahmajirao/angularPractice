@@ -1,5 +1,6 @@
 import {Component} from '@angular/core'
 import { CoursesService } from '../courses.service';
+import { FavoriteChangedEventArgs } from '../favorite/favorite.component';
 
 @Component({ 
     selector:'courses', 
@@ -19,7 +20,7 @@ export class CoursesComponent{
     enrollToCourse($event){
         console.log('Enrolled to the Courses successfully ',$event);
     }
-    onFavoriteChanged() {
-        console.log('changed');
+    onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
+        console.log('changed', eventArgs);
     }
 }

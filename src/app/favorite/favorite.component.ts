@@ -26,7 +26,7 @@ export class FavoriteComponent implements OnInit {
   onClick(){
     this.isFavorite = !this.isFavorite;
     this.changeImageUrl()
-    this.change.emit();
+    this.change.emit({newValue: this.isFavorite});
   }
 
   changeImageUrl() {
@@ -35,4 +35,8 @@ export class FavoriteComponent implements OnInit {
     else
     this.imgURL = '../../assets/images/notfavorite.png';
   }
+}
+
+export interface FavoriteChangedEventArgs{
+  newValue: boolean
 }
