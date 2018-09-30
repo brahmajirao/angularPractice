@@ -10,8 +10,8 @@ export class FavoriteComponent implements OnInit {
   @Input() 
   isFavorite: boolean;
 
-  @Output()
-  change = new EventEmitter();
+  @Output('change')
+  click = new EventEmitter();
   
   imgURL=""
 
@@ -26,7 +26,7 @@ export class FavoriteComponent implements OnInit {
   onClick(){
     this.isFavorite = !this.isFavorite;
     this.changeImageUrl()
-    this.change.emit({newValue: this.isFavorite});
+    this.click.emit({newValue: this.isFavorite});
   }
 
   changeImageUrl() {
