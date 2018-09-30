@@ -11,11 +11,15 @@ export class CoursesComponent{
     isActive = true;
     constructor(service:CoursesService){
         this.courses = service.getCources()
+        console.log(this.courses);
     }
     getTitle(){
         return this.title
     }
     enrollToCourse($event){
         console.log('Enrolled to the Courses successfully ',$event);
+    }
+    onFavoriteChanged() {
+        console.log('changed');
     }
 }

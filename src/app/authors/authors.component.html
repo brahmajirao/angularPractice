@@ -1,5 +1,5 @@
 <h2>{{getTitle()}}</h2>
-    <span>Filter: </span><input [(ngModel)]="searchStr" (keyup.enter)="onKeyUp()" />
+    <span>Filter: </span><input [(ngModel)]="searchStr" (keyup.enter)="onKeyUp()" />{{searchStr | capitalizestrwords}}
     <br/>
     <div *ngFor="let author of authors" style="display:block">
         <input type="checkbox"/> {{author.name}}
