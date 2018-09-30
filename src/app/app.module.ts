@@ -11,6 +11,7 @@ import { AuthorsService } from './authors.service';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { CapitalizestrwordsPipe } from './capitalizestrwords.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CapitalizestrwordsPipe } from './capitalizestrwords.pipe';
     AuthorsComponent,
     SummaryPipe,
     FavoriteComponent,
-    CapitalizestrwordsPipe
+    CapitalizestrwordsPipe,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
