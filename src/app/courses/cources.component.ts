@@ -23,4 +23,21 @@ export class CoursesComponent{
     onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
         console.log('changed', eventArgs);
     }
+    addNewCourse(){
+        this.courses.push(
+            {
+                title:"The complete Angular Course-new",
+                rating: 0,
+                students: 0,
+                price: 190.95,
+                releaseDate: new Date(2018, 3, 1),
+                isFavorite:false
+            }
+        );
+    }
+
+    removeCourse(courseobj){
+        let index = this.courses.indexOf(courseobj);
+        this.courses.splice(index,1);
+    }
 }
