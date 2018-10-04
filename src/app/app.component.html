@@ -1,9 +1,17 @@
 <h1>Angular</h1>
+<ul class="nav nav-pills">
+    <li [class.active]="viewMode=='courses'"><a (click)="viewMode='courses'">Courses</a></li>
+    <li [class.active]="viewMode=='authors'"><a (click)="viewMode='authors'">Authors</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'courses'"><courses></courses></div>
+    <div *ngSwitchCase="'authors'"><authors></authors></div>
+</div>
+
 <app-panel>
     <div class="heading">Heading</div>
     <div class="body">
         Some conent here ...
     </div>
 </app-panel>
-<courses></courses>
-<authours></authours>
+

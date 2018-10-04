@@ -2,7 +2,7 @@ import {Component} from '@angular/core'
 import { AuthorsService } from '../authors.service';
 
 @Component({ 
-    selector:'authours', 
+    selector:'authors', 
     templateUrl:"./authors.component.html"
 })
 export class AuthorsComponent{
