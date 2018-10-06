@@ -7,7 +7,7 @@
     display: block;
 }
 </style>
-<h2>{{getTitle()}}</h2><span class="newCourse"><input type="button" name="add_course" value="Add New Course" (click)="addNewCourse()"/></span><br/><br/>
+<h2>{{getTitle()}}</h2><span class="newCourse"><input type="text" appInputFormat/><input type="button" name="add_course" value="Add New Course" (click)="addNewCourse()"/></span><br/><br/>
     <div style="display:block" *ngFor="let course of courses; index as i; even as isEven" [class.grey]="isEven">
         <input type="checkbox" name="course_{{i}}"/> {{course.title | uppercase }}
         <app-favorite [isFavorite] = "course.isFavorite" (change)="onFavoriteChanged($event)"> </app-favorite><input type="button" name="remove" value="Remove" (click)="removeCourse(course)" style="float: right"/>
