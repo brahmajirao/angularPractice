@@ -13,6 +13,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { CapitalizestrwordsPipe } from './capitalizestrwords.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ContactformComponent } from './contactform/contactform.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { InputFormatDirective } from './input-format.directive';
     FavoriteComponent,
     CapitalizestrwordsPipe,
     PanelComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ZippyComponent,
+    ContactformComponent
   ],
   imports: [
     BrowserModule,

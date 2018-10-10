@@ -1,0 +1,6 @@
+<div class="zippy">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="toggle()">{{title}}
+    <span [ngClass]="{'up':isExpanded,'down':!isExpanded}"></span>
+  </div>
+  <div class="zippy-body" *ngIf="isExpanded">Body</div>
+</div>
