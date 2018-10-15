@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="username">UserName</label>
+    <input type="text" class="form-control" id="username" formControllerName="username"/>
+    <div *ngIf="getUsername.touched && getUsername.invalid" class="alert alert-danger">This field is required</div>
+    <div>{{form.value | json}}</div>
+  </div>
+  <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text" class="form-control" id="password" formControllerName="password"/>
+  </div>
+  <input type="button" class="btn btn-primary" value="Sign up"/>
+</form>
