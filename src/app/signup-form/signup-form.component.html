@@ -2,10 +2,12 @@
   <div class="form-group">
     <label for="username">UserName</label>
     <input type="text" class="form-control" id="username" formControlName="username"/>
+    <div *ngIf="getUsername.pending">Checking for uniqueness...</div>
     <div *ngIf="getUsername.touched && getUsername.invalid" class="alert alert-danger">
       <div *ngIf="getUsername.errors.required">UserName is required</div>
       <div *ngIf="getUsername.errors.minlength">UserName minimum length should be 3 characters.</div>
       <div *ngIf="getUsername.errors.cannotContainSpace">UserName cannot contain space.</div>
+      <div *ngIf="getUsername.errors.shouldBeUnique">UserName is already taken.</div>
     </div>
     <div>{{form.value | json}}</div>
   </div>
