@@ -19,6 +19,8 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TopicsComponent } from './topics/topics.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,12 +38,14 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     CreateCourseComponent,
     SignupFormComponent,
     TopicsComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService,
