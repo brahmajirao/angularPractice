@@ -26,6 +26,12 @@ export class PostsComponent implements OnInit {
       });
    }
 
+   updatePost(postData){
+     this.http.put(this.url+'/'+postData.id,JSON.stringify(postData)).subscribe(response=>{
+       console.log(response);
+     });
+   }
+
   ngOnInit() {
   }
 
