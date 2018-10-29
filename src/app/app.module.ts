@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/cources.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
+import { PostsService } from './services/posts.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { SummaryPipe } from './summary.pipe';
@@ -49,7 +50,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostsService
   ],
   bootstrap: [AppComponent]
 })
