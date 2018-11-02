@@ -21,27 +21,25 @@ export class PostsService {
   }
 
   createPost(postData){
-    return this.http.post(this.url, JSON.stringify(postData)).pipe(catchError((error:Response) => {
-      if(error.status === 400) {
-        return Observable.throw(new BadInput(error.json()))
-      }
-      return Observable.throw(new AppError(error.json()));
-    }) as any);
+    return this.http.post(this.url, JSON.stringify(postData)).pipe(catchError(this.handleError) as any);
   }
 
   updatePost(postData){
     console.log(postData);
-    return this.http.put(this.url+'/'+postData['id'],postData);
+    return this.http.put(this.url+'/'+postData['id'],postData).pipe(catchError(this.handleError));
   }
 
   deletePost(id){
-    id = 409;
-    return this.http.delete(this.url+'/'+id).pipe(catchError((error:Response)=>{
-      if(error.status===404){
-        return throwError(new NotFoundError());
-      }
-        return throwError(new AppError(error));
-        
-    }) as any);
+    return this.http.delete(this.url+'/'+id).pipe(catchError(this.handleError) as any);
+  }
+
+  private handleError(error:Response){
+    if(error.status===404){
+      return throwError(new NotFoundError());
+    }
+    if(error.status === 400) {
+      return Observable.throw(new BadInput(error.json()))
+    }
+    return throwError(new AppError(error));
   }
 }
