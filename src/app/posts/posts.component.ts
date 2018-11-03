@@ -18,7 +18,7 @@ export class PostsComponent implements OnInit {
 
    createPost(input: HTMLInputElement){
       let postData = {title:input.value};
-      this.service.createPost(JSON.stringify(postData))
+      this.service.create(JSON.stringify(postData))
       .subscribe(response=>{
         postData['id'] = response['id'];
         this.posts.splice(0,0,postData);
@@ -34,14 +34,14 @@ export class PostsComponent implements OnInit {
    }
 
    updatePost(postData){
-     this.service.updatePost(postData)
+     this.service.update(postData)
      .subscribe(response=>{
        console.log(response);
      });
    }
 
    deletePost(postData){
-     this.service.deletePost(postData.id)
+     this.service.delete(postData.id)
      .subscribe(response=>{
        let index = this.posts.indexOf(postData);
        this.posts.splice(index,1);
@@ -56,7 +56,7 @@ export class PostsComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.service.getPosts()
+    this.service.getAll()
     .subscribe(response => {
       this.posts = response;
     });
