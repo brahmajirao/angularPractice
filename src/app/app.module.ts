@@ -54,6 +54,7 @@ import { RouterModule, Routes } from '@angular/router'
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'posts', component:PostsComponent},
+      {path: 'courses/:courseId', component:CourseComponent},
       {path: 'courses', component:CoursesComponent},
       {path: 'authors', component:AuthorsComponent},
       {path: 'new-course', component:CreateCourseComponent}
