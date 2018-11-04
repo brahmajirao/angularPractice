@@ -1,25 +1,3 @@
 <h1>Angular</h1>
-<app-posts></app-posts>
-<change-password></change-password>
-<signup-form></signup-form>
-<ul class="nav nav-pills">
-    <li [class.active]="viewMode=='courses'"><a (click)="viewMode='courses'">Courses</a></li>
-    <li [class.active]="viewMode=='authors'"><a (click)="viewMode='authors'">Authors</a></li>
-</ul>
-<div [ngSwitch]="viewMode">
-    <div *ngSwitchCase="'courses'"><courses></courses></div>
-    <div *ngSwitchCase="'authors'"><authors></authors></div>
-</div>
-
-<app-panel>
-    <div class="heading">Heading</div>
-    <div class="body">
-        Some conent here ...
-    </div>
-</app-panel>
-<br/>
-<zippy title="Shipping details"></zippy>
-<contactform></contactform>
-<create-course></create-course>
-<app-topics></app-topics>
-
+<app-navigation></app-navigation>
+<router-outlet></router-outlet>

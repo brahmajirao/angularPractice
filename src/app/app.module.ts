@@ -23,6 +23,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppErrorHandler } from './common/app-error-handler';
+import { NavigationComponent } from './navigation/navigation.component';
+import { RouterModule, Routes } from '@angular/router'
+
 
 @NgModule({
   declarations: [
@@ -41,13 +44,20 @@ import { AppErrorHandler } from './common/app-error-handler';
     SignupFormComponent,
     TopicsComponent,
     ChangePasswordComponent,
-    PostsComponent
+    PostsComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'posts', component:PostsComponent},
+      {path: 'courses', component:CoursesComponent},
+      {path: 'authors', component:AuthorsComponent},
+      {path: 'new-course', component:CreateCourseComponent}
+    ])
   ],
   providers: [
     CoursesService,
