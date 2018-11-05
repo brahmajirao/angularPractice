@@ -15,7 +15,7 @@
         <span style="display:block; padding-left:30px">Students: {{course.students | number}}</span>
         <span style="display:block; padding-left:30px">Price: {{course.price | currency:'EUR':true:'3.2-2' }}</span>
         <span style="display:block; padding-left:30px">Release Date: {{course.releaseDate | date:'shortDate'}}</span>
-        <span style="display:block; padding-left:30px"><a [routerLink]="['/courses', course.id]">More...</a></span>
+        <span style="display:block; padding-left:30px"><a [routerLink]="['/courses', course.id, course.title]">More...</a></span>
         <hr>
     </div>
     <button class="btn btn-primary" [class.active] = "isActive" (click) = "enrollToCourse($event)">Enroll</button>
