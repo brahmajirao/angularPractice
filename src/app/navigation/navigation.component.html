@@ -1,6 +1,6 @@
 <ul>
   <li><a routerLinkActive="active" routerLink="/posts">Posts</a></li>
-  <li><a routerLinkActive="active" routerLink="/courses">Courses</a></li>
+  <li><a routerLinkActive="active" routerLink="/courses" [queryParams]="{page:1, order:'newest'}">Courses</a></li>
   <li><a routerLinkActive="active" routerLink="/authors">Authors</a></li>
   <li><a routerLinkActive="active" routerLink="/new-course">New Course</a></li>
   <li style="float:right"><a href="#about">About</a></li>

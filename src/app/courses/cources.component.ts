@@ -1,4 +1,5 @@
 import {Component} from '@angular/core'
+import {ActivatedRoute} from '@angular/router'
 import { CoursesService } from '../courses.service';
 import { FavoriteChangedEventArgs } from '../favorite/favorite.component';
 
@@ -10,7 +11,9 @@ export class CoursesComponent{
     title="list of courses";
     courses;
     isActive = true;
-    constructor(service:CoursesService){
+    constructor(private route: ActivatedRoute, service:CoursesService){
+        let pageNumber = this.route.snapshot.paramMap.get('page');
+        let order = this.route.snapshot.paramMap.get('order');
         this.courses = service.getCources()
         console.log(this.courses);
     }
